@@ -27,6 +27,7 @@ case "$1" in
 esac
 
 CLOUD_PROVIDER=$1
+TEMPLATE=$2
 
 ########################################################
 # utility functions
@@ -48,19 +49,19 @@ log() {
 case "$CLOUD_PROVIDER" in
         aws)
             echo "calling the aws_setup.sh script here... "
-  			. $starting_dir/provider/aws/aws_setup.sh
+  			. $starting_dir/provider/aws/aws_setup.sh $CLOUD_PROVIDER $TEMPLATE
             ;;
         azure)
 	    echo "calling the azure_setup.sh script here... "
-#  			. $starting_dir/provider/azure/azure_setup.sh
+#  			. $starting_dir/provider/azure/azure_setup.sh $CLOUD_PROVIDER $TEMPLATE
             ;;
         gcp)
 	    echo "calling the gcp_setup.sh script here... "
-#     		. $starting_dir/provider/gcp/gcp_setup.sh
+#     		. $starting_dir/provider/gcp/gcp_setup.sh $CLOUD_PROVIDER $TEMPLATE
             ;;
         proxmox)
 	    echo "calling the prox_setup.sh script here... "
-           . $starting_dir/provider/proxmox/proxmox_setup.sh
+           . $starting_dir/provider/proxmox/proxmox_setup.sh $CLOUD_PROVIDER $TEMPLATE
             ;;
         *)
             echo "you had a different choice... is this block needed?"
