@@ -1,0 +1,831 @@
+{
+  "cdhVersion": "7.1.3",
+  "displayName": "Cluster1",
+  "cmVersion": "7.1.3",
+  "repositories": [
+    "https://archive.cloudera.com/p/cdh7/7.1.3.0/parcels/",
+    "https://archive.cloudera.com/cdh7/7.1.3.0/parcels/"
+  ],
+  "products": [
+    {
+      "version": "0.8.0.2.0.1.0-29",
+      "product": "SCHEMAREGISTRY"
+    },
+    {
+      "version": "1.7.2.p1.2066404",
+      "product": "CDSW"
+    },
+    {
+      "version": "7.1.3-1.cdh7.1.3.p0.4992530",
+      "product": "CDH"
+    },
+    {
+      "version": "1.1.0.0",
+      "product": "CFM"
+    }
+  ],
+  "services": [
+    {
+      "refName": "zookeeper",
+      "serviceType": "ZOOKEEPER",
+      "serviceConfigs": [
+        {
+          "name": "service_config_suppression_server_count_validator",
+          "value": "true"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "zookeeper-SERVER-BASE",
+          "roleType": "SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "kafka",
+      "serviceType": "KAFKA",
+      "serviceConfigs": [
+        {
+          "name": "service_config_suppression_kafka_broker_count_validator",
+          "value": "true"
+        },
+        {
+          "name": "transaction.state.log.replication.factor",
+          "value": "1"
+        },
+        {
+          "name": "hdfs_service",
+          "ref": "hdfs"
+        },
+        {
+          "name": "service_config_suppression_transaction.state.log.replication.factor",
+          "value": "true"
+        },
+        {
+          "name": "zookeeper_service",
+          "ref": "zookeeper"
+        },
+        {
+          "name": "service_config_suppression_offsets.topic.replication.factor",
+          "value": "true"
+        },
+        {
+          "name": "offsets.topic.replication.factor",
+          "value": "1"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "kafka-KAFKA_BROKER-BASE",
+          "roleType": "KAFKA_BROKER",
+          "configs": [
+            {
+              "name": "broker_max_heap_size",
+              "value": "512"
+            }
+          ],
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "solr",
+      "serviceType": "SOLR",
+      "roleConfigGroups": [
+        {
+          "refName": "solr-SOLR_SERVER-BASE",
+          "roleType": "SOLR_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "hdfs",
+      "serviceType": "HDFS",
+      "serviceConfigs": [
+        {
+          "name": "service_config_suppression_datanode_count_validator",
+          "value": "true"
+        },
+        {
+          "name": "service_health_suppression_hdfs_under_replicated_blocks",
+          "value": "true"
+        },
+        {
+          "name": "service_health_suppression_hdfs_verify_ec_with_topology",
+          "value": "true"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "hdfs-NAMENODE-1",
+          "roleType": "NAMENODE",
+          "configs": [
+            {
+              "name": "role_health_suppression_name_node_data_directories_free_space",
+              "value": "true"
+            }
+          ],
+          "base": false
+        },
+        {
+          "refName": "hdfs-BALANCER-BASE",
+          "roleType": "BALANCER",
+          "base": true
+        },
+        {
+          "refName": "hdfs-SECONDARYNAMENODE-1",
+          "roleType": "SECONDARYNAMENODE",
+          "configs": [
+            {
+              "name": "role_health_suppression_secondary_name_node_checkpoint_directories_free_space",
+              "value": "true"
+            }
+          ],
+          "base": false
+        },
+        {
+          "refName": "hdfs-DATANODE-1",
+          "roleType": "DATANODE",
+          "configs": [
+            {
+              "name": "role_health_suppression_datanode_data_directories_free_space",
+              "value": "true"
+            }
+          ],
+          "base": false
+        }
+      ]
+    },
+    {
+      "refName": "nifitoolkitca",
+      "serviceType": "NIFITOOLKITCA",
+      "serviceConfigs": [
+        {
+          "name": "nifi.toolkit.tls.ca.server.token",
+          "variable": "nifitoolkitca-nifi.toolkit.tls.ca.server.token"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifitoolkitca-NIFI_TOOLKIT_SERVER-BASE",
+          "roleType": "NIFI_TOOLKIT_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "yarn",
+      "serviceType": "YARN",
+      "serviceConfigs": [
+        {
+          "name": "service_config_suppression_yarn_queue_manager_validator",
+          "value": "true"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "yarn-RESOURCEMANAGER-BASE",
+          "roleType": "RESOURCEMANAGER",
+          "base": true
+        },
+        {
+          "refName": "yarn-NODEMANAGER-1",
+          "roleType": "NODEMANAGER",
+          "configs": [
+            {
+              "name": "role_health_suppression_nodemanager_local_data_directories_free_space",
+              "value": "true"
+            },
+            {
+              "name": "role_health_suppression_nodemanager_log_directories_free_space",
+              "value": "true"
+            }
+          ],
+          "base": false
+        },
+        {
+          "refName": "yarn-JOBHISTORY-BASE",
+          "roleType": "JOBHISTORY",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "schemaregistry",
+      "serviceType": "SCHEMAREGISTRY",
+      "serviceConfigs": [
+        {
+          "name": "database_type",
+          "variable": "schemaregistry-database_type"
+        },
+        {
+          "name": "database_port",
+          "variable": "schemaregistry-database_port"
+        },
+        {
+          "name": "hdfs_service",
+          "ref": "hdfs"
+        },
+        {
+          "name": "database_host",
+          "variable": "schemaregistry-database_host"
+        },
+        {
+          "name": "database_password",
+          "variable": "schemaregistry-database_password"
+        },
+        {
+          "name": "database_name",
+          "variable": "schemaregistry-database_name"
+        },
+        {
+          "name": "database_user",
+          "variable": "schemaregistry-database_user"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "schemaregistry-SCHEMA_REGISTRY_SERVER-BASE",
+          "roleType": "SCHEMA_REGISTRY_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "spark_on_yarn",
+      "serviceType": "SPARK_ON_YARN",
+      "roleConfigGroups": [
+        {
+          "refName": "spark_on_yarn-SPARK_YARN_HISTORY_SERVER-BASE",
+          "roleType": "SPARK_YARN_HISTORY_SERVER",
+          "base": true
+        },
+        {
+          "refName": "spark_on_yarn-GATEWAY-BASE",
+          "roleType": "GATEWAY",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "kudu",
+      "serviceType": "KUDU",
+      "serviceConfigs": [
+        {
+          "name": "hdfs_service",
+          "ref": "hdfs"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "kudu-KUDU_MASTER-BASE",
+          "roleType": "KUDU_MASTER",
+          "configs": [
+            {
+              "name": "fs_wal_dir",
+              "variable": "kudu-KUDU_MASTER-BASE-fs_wal_dir"
+            },
+            {
+              "name": "fs_data_dirs",
+              "variable": "kudu-KUDU_MASTER-BASE-fs_data_dirs"
+            }
+          ],
+          "base": true
+        },
+        {
+          "refName": "kudu-KUDU_TSERVER-BASE",
+          "roleType": "KUDU_TSERVER",
+          "configs": [
+            {
+              "name": "fs_wal_dir",
+              "variable": "kudu-KUDU_TSERVER-BASE-fs_wal_dir"
+            },
+            {
+              "name": "fs_data_dirs",
+              "variable": "kudu-KUDU_TSERVER-BASE-fs_data_dirs"
+            }
+          ],
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "tez",
+      "serviceType": "TEZ",
+      "roleConfigGroups": [
+        {
+          "refName": "tez-GATEWAY-BASE",
+          "roleType": "GATEWAY",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "hive",
+      "serviceType": "HIVE",
+      "serviceConfigs": [
+        {
+          "name": "hive_metastore_database_type",
+          "variable": "hive-hive_metastore_database_type"
+        },
+        {
+          "name": "hive_metastore_database_name",
+          "variable": "hive-hive_metastore_database_name"
+        },
+        {
+          "name": "hive_metastore_database_password",
+          "variable": "hive-hive_metastore_database_password"
+        },
+        {
+          "name": "hive_metastore_database_port",
+          "variable": "hive-hive_metastore_database_port"
+        },
+        {
+          "name": "hive_metastore_database_host",
+          "variable": "hive-hive_metastore_database_host"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "hive-GATEWAY-BASE",
+          "roleType": "GATEWAY",
+          "base": true
+        },
+        {
+          "refName": "hive-HIVEMETASTORE-BASE",
+          "roleType": "HIVEMETASTORE",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "hive_on_tez",
+      "serviceType": "HIVE_ON_TEZ",
+      "roleConfigGroups": [
+        {
+          "refName": "hive_on_tez-HIVESERVER2-BASE",
+          "roleType": "HIVESERVER2",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "livy",
+      "serviceType": "LIVY",
+      "roleConfigGroups": [
+        {
+          "refName": "livy-LIVY_SERVER-BASE",
+          "roleType": "LIVY_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "nifiregistry",
+      "serviceType": "NIFIREGISTRY",
+      "serviceConfigs": [
+        {
+          "name": "nifi.registry.security.truststorePasswd",
+          "variable": "nifiregistry-nifi.registry.security.truststorePasswd"
+        },
+        {
+          "name": "nifitoolkitca_service",
+          "ref": "nifitoolkitca"
+        },
+        {
+          "name": "nifi.registry.master.key.password",
+          "variable": "nifiregistry-nifi.registry.master.key.password"
+        },
+        {
+          "name": "nifi.registry.security.keyPasswd",
+          "variable": "nifiregistry-nifi.registry.security.keyPasswd"
+        },
+        {
+          "name": "nifi.registry.security.keystorePasswd",
+          "variable": "nifiregistry-nifi.registry.security.keystorePasswd"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifiregistry-NIFI_REGISTRY_SERVER-BASE",
+          "roleType": "NIFI_REGISTRY_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "nifi",
+      "serviceType": "NIFI",
+      "serviceConfigs": [
+        {
+          "name": "zookeeper_service",
+          "ref": "zookeeper"
+        },
+        {
+          "name": "nifi.master.key.password",
+          "variable": "nifi-nifi.master.key.password"
+        },
+        {
+          "name": "nifi.security.keyPasswd",
+          "variable": "nifi-nifi.security.keyPasswd"
+        },
+        {
+          "name": "nifitoolkitca_service",
+          "ref": "nifitoolkitca"
+        },
+        {
+          "name": "nifi.security.keystorePasswd",
+          "variable": "nifi-nifi.security.keystorePasswd"
+        },
+        {
+          "name": "nifi.sensitive.props.key",
+          "variable": "nifi-nifi.sensitive.props.key"
+        },
+        {
+          "name": "nifi.security.truststorePasswd",
+          "variable": "nifi-nifi.security.truststorePasswd"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifi-NIFI_NODE-BASE",
+          "roleType": "NIFI_NODE",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "cdsw",
+      "serviceType": "CDSW",
+      "serviceConfigs": [
+        {
+          "name": "hive_service",
+          "ref": "hive"
+        },
+        {
+          "name": "spark_on_yarn_service",
+          "ref": "spark_on_yarn"
+        },
+        {
+          "name": "cdsw.domain.config",
+          "value": "cdsw.YourCDSWDomain.nip.io"
+        },
+        {
+          "name": "yarn_service",
+          "ref": "yarn"
+        },
+        {
+          "name": "solr_service",
+          "ref": "solr"
+        },
+        {
+          "name": "hdfs_service",
+          "ref": "hdfs"
+        },
+        {
+          "name": "cdsw.master.ip.config",
+          "value": "YourPrivateIP"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "cdsw-CDSW_APPLICATION-BASE",
+          "roleType": "CDSW_APPLICATION",
+          "base": true
+        },
+        {
+          "refName": "cdsw-CDSW_MASTER-BASE",
+          "roleType": "CDSW_MASTER",
+          "base": true
+        },
+        {
+          "refName": "cdsw-CDSW_DOCKER-BASE",
+          "roleType": "CDSW_DOCKER",
+          "configs": [
+            {
+              "name": "cdsw.docker.devices.config",
+              "value": "/dev/sde"
+            }
+          ],
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "streams_messaging_manager",
+      "serviceType": "STREAMS_MESSAGING_MANAGER",
+      "serviceConfigs": [
+        {
+          "name": "smm_database_password",
+          "variable": "streams_messaging_manager-smm_database_password"
+        },
+        {
+          "name": "smm_database_port",
+          "variable": "streams_messaging_manager-smm_database_port"
+        },
+        {
+          "name": "zookeeper_service",
+          "ref": "zookeeper"
+        },
+        {
+          "name": "smm_database_type",
+          "variable": "streams_messaging_manager-smm_database_type"
+        },
+        {
+          "name": "kafka_service",
+          "ref": "kafka"
+        },
+        {
+          "name": "schemaregistry_service",
+          "ref": "schemaregistry"
+        },
+        {
+          "name": "smm_database_host",
+          "variable": "streams_messaging_manager-smm_database_host"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "streams_messaging_manager-STREAMS_MESSAGING_MANAGER_SERVER-BASE",
+          "roleType": "STREAMS_MESSAGING_MANAGER_SERVER",
+          "base": true
+        },
+        {
+          "refName": "streams_messaging_manager-STREAMS_MESSAGING_MANAGER_UI-BASE",
+          "roleType": "STREAMS_MESSAGING_MANAGER_UI",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "impala",
+      "serviceType": "IMPALA",
+      "roleConfigGroups": [
+        {
+          "refName": "impala-IMPALAD-1",
+          "roleType": "IMPALAD",
+          "configs": [
+            {
+              "name": "role_health_suppression_impalad_scratch_directories_free_space",
+              "value": "true"
+            }
+          ],
+          "base": false
+        },
+        {
+          "refName": "impala-STATESTORE-BASE",
+          "roleType": "STATESTORE",
+          "base": true
+        },
+        {
+          "refName": "impala-CATALOGSERVER-BASE",
+          "roleType": "CATALOGSERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "hue",
+      "serviceType": "HUE",
+      "serviceConfigs": [
+        {
+          "name": "database_type",
+          "variable": "hue-database_type"
+        },
+        {
+          "name": "database_port",
+          "variable": "hue-database_port"
+        },
+        {
+          "name": "database_password",
+          "variable": "hue-database_password"
+        },
+        {
+          "name": "database_host",
+          "variable": "hue-database_host"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "hue-HUE_SERVER-BASE",
+          "roleType": "HUE_SERVER",
+          "base": true
+        },
+        {
+          "refName": "hue-HUE_LOAD_BALANCER-BASE",
+          "roleType": "HUE_LOAD_BALANCER",
+          "base": true
+        }
+      ]
+    }
+  ],
+  "hostTemplates": [
+    {
+      "refName": "MasterTemplate",
+      "cardinality": 1,
+      "roleConfigGroupsRefNames": [
+        "cdsw-CDSW_APPLICATION-BASE",
+        "cdsw-CDSW_DOCKER-BASE",
+        "cdsw-CDSW_MASTER-BASE",
+        "hdfs-BALANCER-BASE",
+        "hdfs-DATANODE-1",
+        "hdfs-NAMENODE-1",
+        "hdfs-SECONDARYNAMENODE-1",
+        "hive-GATEWAY-BASE",
+        "hive-HIVEMETASTORE-BASE",
+        "hive_on_tez-HIVESERVER2-BASE",
+        "hue-HUE_LOAD_BALANCER-BASE",
+        "hue-HUE_SERVER-BASE",
+        "impala-CATALOGSERVER-BASE",
+        "impala-IMPALAD-1",
+        "impala-STATESTORE-BASE",
+        "kafka-KAFKA_BROKER-BASE",
+        "kudu-KUDU_MASTER-BASE",
+        "kudu-KUDU_TSERVER-BASE",
+        "livy-LIVY_SERVER-BASE",
+        "nifi-NIFI_NODE-BASE",
+        "nifiregistry-NIFI_REGISTRY_SERVER-BASE",
+        "nifitoolkitca-NIFI_TOOLKIT_SERVER-BASE",
+        "schemaregistry-SCHEMA_REGISTRY_SERVER-BASE",
+        "solr-SOLR_SERVER-BASE",
+        "spark_on_yarn-GATEWAY-BASE",
+        "spark_on_yarn-SPARK_YARN_HISTORY_SERVER-BASE",
+        "streams_messaging_manager-STREAMS_MESSAGING_MANAGER_SERVER-BASE",
+        "streams_messaging_manager-STREAMS_MESSAGING_MANAGER_UI-BASE",
+        "tez-GATEWAY-BASE",
+        "yarn-JOBHISTORY-BASE",
+        "yarn-NODEMANAGER-1",
+        "yarn-RESOURCEMANAGER-BASE",
+        "zookeeper-SERVER-BASE"
+      ]
+    }
+  ],
+  "instantiator": {
+    "clusterName": "Cluster1",
+    "hosts": [
+      {
+        "hostName": "YourHostname",
+        "hostTemplateRefName": "MasterTemplate"
+      }
+    ],
+    "variables": [
+      {
+        "name": "hive-hive_metastore_database_host",
+        "value": "YourHostname"
+      },
+      {
+        "name": "hive-hive_metastore_database_name",
+        "value": "hive"
+      },
+      {
+        "name": "hive-hive_metastore_database_password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "hive-hive_metastore_database_port",
+        "value": "5432"
+      },
+      {
+        "name": "hive-hive_metastore_database_type",
+        "value": "postgresql"
+      },
+      {
+        "name": "hue-database_host",
+        "value": "YourHostname"
+      },
+      {
+        "name": "hue-database_password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "hue-database_port",
+        "value": "5432"
+      },
+      {
+        "name": "hue-database_type",
+        "value": "postgresql"
+      },
+      {
+        "name": "kudu-KUDU_MASTER-BASE-fs_data_dirs",
+        "value": "/kudu/master/data"
+      },
+      {
+        "name": "kudu-KUDU_MASTER-BASE-fs_wal_dir",
+        "value": "/kudu/master/wal"
+      },
+      {
+        "name": "kudu-KUDU_TSERVER-BASE-fs_data_dirs",
+        "value": "/kudu/tserver/data"
+      },
+      {
+        "name": "kudu-KUDU_TSERVER-BASE-fs_wal_dir",
+        "value": "/kudu/tserver/wal"
+      },
+      {
+        "name": "nifi-nifi.master.key.password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.keyPasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.keystorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.truststorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.sensitive.props.key",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.master.key.password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.keyPasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.keystorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.truststorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifitoolkitca-nifi.toolkit.tls.ca.server.token",
+        "value": "Nifirockstheboat"
+      },
+      {
+        "name": "schemaregistry-database_host",
+        "value": "YourHostname"
+      },
+      {
+        "name": "schemaregistry-database_name",
+        "value": "registry"
+      },
+      {
+        "name": "schemaregistry-database_password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "schemaregistry-database_port",
+        "value": "5432"
+      },
+      {
+        "name": "schemaregistry-database_type",
+        "value": "postgresql"
+      },
+      {
+        "name": "schemaregistry-database_user",
+        "value": "registry"
+      },
+      {
+        "name": "streams_messaging_manager-smm_database_host",
+        "value": "YourHostname"
+      },
+      {
+        "name": "streams_messaging_manager-smm_database_password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "streams_messaging_manager-smm_database_port",
+        "value": "5432"
+      },
+      {
+        "name": "streams_messaging_manager-smm_database_type",
+        "value": "postgresql"
+      }
+    ],
+    "roleConfigGroups": [
+      {
+        "rcgRefName": "hdfs-NAMENODE-1",
+        "name": ""
+      },
+      {
+        "rcgRefName": "hdfs-SECONDARYNAMENODE-1",
+        "name": ""
+      },
+      {
+        "rcgRefName": "hdfs-DATANODE-1",
+        "name": ""
+      },
+      {
+        "rcgRefName": "yarn-NODEMANAGER-1",
+        "name": ""
+      },
+      {
+        "rcgRefName": "impala-IMPALAD-1",
+        "name": ""
+      }
+    ],
+    "lenient": false
+  }
+}
