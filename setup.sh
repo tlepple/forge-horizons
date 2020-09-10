@@ -47,19 +47,19 @@ log() {
 
 case "$CLOUD_PROVIDER" in
         aws)
-            echo "calling the aws_setup scipt here... "
+            echo "calling the aws_setup.sh script here... "
   			. $starting_dir/provider/aws/aws_setup.sh
             ;;
         azure)
-	    echo "calling the azure_setup scipt here... "
+	    echo "calling the azure_setup.sh script here... "
 #  			. $starting_dir/provider/azure/azure_setup.sh
             ;;
         gcp)
-	    echo "calling the gcp_setup scipt here... "
+	    echo "calling the gcp_setup.sh script here... "
 #     		. $starting_dir/provider/gcp/gcp_setup.sh
             ;;
         proxmox)
-	    echo "calling the prox_setup scipt here... "
+	    echo "calling the prox_setup.sh script here... "
            . $starting_dir/provider/proxmox/proxmox_setup.sh
             ;;
         *)
