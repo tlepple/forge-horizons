@@ -6,24 +6,24 @@
 
 case "$1" in
         aws)
-           echo "you chose aws"
+            echo "you chose aws"
             ;;
         azure)
-           echo "you chose azure"
+            echo "you chose azure"
             ;;
         gcp)
-	       echo "you chose gcp"
+	    echo "you chose gcp"
             ;;
         proxmox)
+	    echo "you chose proxmox"
             ;;
-           echo "you chose proxmox"
         *)
-            echo $"Usage: $0 {aws|azure|gcp}"
+            echo $"Usage: $0 {aws|azure|gcp|proxmox}"
             echo $"example: ./setup.sh azure"
             echo $"example: ./setup.sh aws"
             echo $"example: ./setup.sh gcp"
             echo $"example: ./setup.sh proxmox"
-#            exit 0
+            echo
 esac
 
 CLOUD_PROVIDER=$1
@@ -47,21 +47,20 @@ log() {
 
 case "$CLOUD_PROVIDER" in
         aws)
-            echo "execute aws code here... "
-#  			. $starting_dir/provider/aws/aws_setup.sh
+            echo "calling the aws_setup scipt here... "
+  			. $starting_dir/provider/aws/aws_setup.sh
             ;;
         azure)
-           echo "execute azure code here"
+	    echo "calling the azure_setup scipt here... "
 #  			. $starting_dir/provider/azure/azure_setup.sh
             ;;
         gcp)
-           echo "execute gcp code here..."
-#     		cd ./provider/gcp
+	    echo "calling the gcp_setup scipt here... "
 #     		. $starting_dir/provider/gcp/gcp_setup.sh
             ;;
         proxmox)
-           echo "execute proxmox code here..."
-#           . $starting_dir/provider/proxmox/proxmox_setup.sh
+	    echo "calling the prox_setup scipt here... "
+           . $starting_dir/provider/proxmox/proxmox_setup.sh
             ;;
         *)
             echo "you had a different choice... is this block needed?"
