@@ -38,9 +38,9 @@ echo 'sdc1 --> ' $SDC1
 echo
 echo 'sdd1 --> ' $SDD1
 
-echo 'UUID='$SDB1'		/dfs		xfs		0	2'  >> /etc/fstab
-echo 'UUID='$SDC1'		/opt		xfs		0	2'  >> /etc/fstab
-echo 'UUID='$SDD1'		/kudu		xfs		0	2'  >> /etc/fstab
+echo 'UUID='$SDB1'		/dfs		xfs		defaults	0	2'  >> /etc/fstab
+echo 'UUID='$SDC1'		/opt		xfs		defaults	0	2'  >> /etc/fstab
+echo 'UUID='$SDD1'		/kudu		xfs		defaults	0	2'  >> /etc/fstab
 
 
 ##########################################################################################
