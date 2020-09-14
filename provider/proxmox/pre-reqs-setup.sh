@@ -2,7 +2,13 @@
 
 NEWHOSTNAME=$1
 
-
+##########################################################################################
+#	Check that the hostname variable has been passed in
+##########################################################################################
+if [ -z "$NEWHOSTNAME" ] ; then
+  echo 'HOSTNAME variable was not passed into this script.  Exiting...'        
+  exit 1
+fi
 
 ##########################################################################################
 #	Set the hostname
