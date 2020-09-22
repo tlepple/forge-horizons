@@ -14,4 +14,12 @@ echo
 
 
 echo "Ready to execude code here..."
+echo
+echo "Current directory is --> " `pwd`
+echo
+echo "Starting install of cluster..."
+echo
+
+# call the setup:
+. common/setup_w_template.sh $TEMPLATE
 
