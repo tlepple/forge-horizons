@@ -6,11 +6,13 @@
 
 PROVIDER=$1
 TEMPLATE=$2
+BLOCKDEVICE=$3
 
 echo "Parameter PROVIDER -->"$PROVIDER
 echo 
 echo "Parameter TEMPLATE -->"$TEMPLATE
 echo
+echo "Parameter BLOCKDEVICE -->" $BLOCKDEVICE
 
 
 echo "Ready to execude code here..."
@@ -24,5 +26,5 @@ echo
 
 cd common
 
-. setup_w_template.sh $TEMPLATE
+. setup_w_template.sh $TEMPLATE $BLOCKDEVICE
 
