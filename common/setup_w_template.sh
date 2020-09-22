@@ -372,8 +372,12 @@ pip install --upgrade pip cm_client
 sed -i "s/YourHostname/`hostname -f`/g" templates/$TEMPLATE
 sed -i "s/YourHostname/`hostname -f`/g" scripts/create_cluster.py
 # CDSW items
+
+#This is used for public cloud infrastructure -- it is now set in the cloud provider section
 #sed -i "s/YourCDSWDomain/$PUBLIC_IP/g" templates/$TEMPLATE
-sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" templates/$TEMPLATE
+
+# This is used for proxmox... it is now called from that setup script
+#sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" templates/$TEMPLATE
 sed -i "s/YourPrivateIP/$PRIVATE_IP/g" templates/$TEMPLATE
 
 #set the cdsw block device
