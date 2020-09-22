@@ -4,6 +4,8 @@ PROVIDER=$1
 TEMPLATE=$2
 BLOCKDEVICE=$3
 
+PUBLIC_IP=`curl https://api.ipify.org/`
+
 #########################################################
 # Input parameters
 #########################################################
