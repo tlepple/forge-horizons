@@ -377,7 +377,7 @@ sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" templates/$TEMPLATE
 sed -i "s/YourPrivateIP/$PRIVATE_IP/g" templates/$TEMPLATE
 
 #set the cdsw block device
-sed -i "s/YourCDSW_BLK_DEVICE/$BLOCKDEVICE/g" templates/$TEMPLATE
+sed -i "s/YourCDSW_BLK_DEVICE/\$BLOCKDEVICE/g" templates/$TEMPLATE
 
 ###########################################################################################################
 # create the cluster with API
