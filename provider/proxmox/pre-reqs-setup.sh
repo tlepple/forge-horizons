@@ -1,6 +1,7 @@
 #/bin/bash
 
-NEWHOSTNAME=$1
+PROVIDER=$1
+NEWHOSTNAME=$2
 
 ##########################################################################################
 #	Check that the hostname variable has been passed in
