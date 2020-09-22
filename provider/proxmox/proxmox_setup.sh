@@ -20,7 +20,8 @@ echo "Parameter BLOCKDEVICE -->" $BLOCKDEVICE
 #########################################################
 # setup template for proxmox items
 #########################################################
-sed -i "s/YourPrivateIP/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
+
+sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
 
 
 ###########################################################################################################
