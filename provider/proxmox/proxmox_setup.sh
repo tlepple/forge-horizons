@@ -14,6 +14,11 @@ echo "Parameter TEMPLATE -->" $TEMPLATE
 echo "Parameter BLOCKDEVICE -->" $BLOCKDEVICE
 #time issues for clock offset in aws	
 
+#########################################################
+# setup template for proxmox items
+#########################################################
+sed -i "s/YourPrivateIP/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
+
 
 ###########################################################################################################
 # install the common items from script 
