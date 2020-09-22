@@ -28,6 +28,7 @@ esac
 
 CLOUD_PROVIDER=$1
 TEMPLATE=$2
+BLOCKDEVICE=$3
 
 ########################################################
 # utility functions
@@ -49,7 +50,7 @@ log() {
 case "$CLOUD_PROVIDER" in
         aws)
             echo "calling the aws_setup.sh script here... "
-  			. $starting_dir/provider/aws/aws_setup.sh $CLOUD_PROVIDER $TEMPLATE
+  			. $starting_dir/provider/aws/aws_setup.sh $CLOUD_PROVIDER $TEMPLATE $BLOCKDEVICE
             ;;
         azure)
 	    echo "calling the azure_setup.sh script here... "
@@ -61,7 +62,7 @@ case "$CLOUD_PROVIDER" in
             ;;
         proxmox)
 	    echo "calling the prox_setup.sh script here... "
-           . $starting_dir/provider/proxmox/proxmox_setup.sh $CLOUD_PROVIDER $TEMPLATE
+           . $starting_dir/provider/proxmox/proxmox_setup.sh $CLOUD_PROVIDER $TEMPLATE $BLOCKDEVICE
             ;;
         *)
             echo "you had a different choice... is this block needed?"
