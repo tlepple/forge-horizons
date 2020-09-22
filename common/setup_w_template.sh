@@ -281,9 +281,9 @@ npm install forever -g
 ###########################################################################################################
 #time issues for clock offset in aws	
 ###########################################################################################################
-echo "setup clock offset issues for aws"
-echo "server 169.254.169.123 prefer iburst minpoll 4 maxpoll 4" >> /etc/chrony.conf
-systemctl restart chronyd
+#echo "setup clock offset issues for aws"
+#echo "server 169.254.169.123 prefer iburst minpoll 4 maxpoll 4" >> /etc/chrony.conf
+#systemctl restart chronyd
 
 ###########################################################################################################
 echo "-- Enable passwordless root login via rsa key"
@@ -398,5 +398,6 @@ echo
 echo "\"tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log\""
 echo
 echo "login to CM  \"http://`curl ifconfig.me`:7180\" user:admin, pwd:admin"
-
+echo 
+echo "login to Private CM \"http://$PRIVATE_IP:7180\" user:admin, pwd:admin"
 #exit 0
