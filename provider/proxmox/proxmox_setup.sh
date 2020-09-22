@@ -29,3 +29,10 @@ sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
 ###########################################################################################################
 echo "calling common_setup.sh here..."
 . $starting_dir/common/common_setup.sh $PROVIDER $TEMPLATE $BLOCKDEVICE
+
+
+###########################################################################################################
+# echo private conns 
+###########################################################################################################
+
+. $starting_dir/bin/echo_private_service_conns.sh
