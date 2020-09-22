@@ -31,6 +31,7 @@ yum install -y python-pip
 
 DB_PASSWORD="supersecret1"
 TEMPLATE=$1
+BLOCKDEVICE=$2
 
 ###########################################################################################################
 # No Paywall 
