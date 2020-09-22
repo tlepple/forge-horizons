@@ -21,5 +21,8 @@ echo "Starting install of cluster..."
 echo
 
 # call the setup:
-. common/setup_w_template.sh $TEMPLATE
+
+cd common
+
+. setup_w_template.sh $TEMPLATE
 
