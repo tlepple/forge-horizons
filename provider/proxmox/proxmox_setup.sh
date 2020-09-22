@@ -7,6 +7,9 @@ PROVIDER=$1
 TEMPLATE=$2
 BLOCKDEVICE=$3
 
+# get the private ip address
+PRIVATE_IP=`ip route get 1 | awk '{print $NF;exit}'`
+
 echo "Begin install into ProxMox Instance from the proxmox_setup.sh script..."
 
 echo "Parameter PROVIDER -->" $PROVIDER
