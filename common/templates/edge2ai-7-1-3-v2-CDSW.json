@@ -506,7 +506,7 @@
           "configs": [
             {
               "name": "cdsw.docker.devices.config",
-              "value": "/dev/sde"
+              "value": "CDSW_BLK_DEVICE"
             }
           ],
           "base": true
