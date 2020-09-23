@@ -410,9 +410,37 @@ echo "Superset install complete..."
 echo
 
 ###########################################################################################################
-# 
+# Create the Kudu tables and views
 ###########################################################################################################
+echo "Create Kudu tables and views"
 
+impala-shell -i localhost -f ~/forge-horizons/common/component/hue_files/sensor-tbls-n-views.sql
+
+echo "Kudu tables and views created"
+
+###########################################################################################################
+# Load the nifi template via api
+###########################################################################################################
+echo
+echo "load nifi template"
+
+#  get the host ip:
+GETIP=`ip route get 1 | awk '{print $NF;exit}'`
+echo "GETIP --> "${GETIP}
+
+#get the root process group id for the main canvas:
+ROOT_PG_ID=`curl -k -s GET http://${GETIP}:8080/nifi-api/process-groups/root | jq -r '.id'`
+echo "root pg id -->"${ROOT_PG_ID}
+
+# Update the IP/hostname for Kafka and Kudu in the NiFi template
+sed -i "s/HOST_IP/${GETIP}/" ~/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml
+
+# Upload the template
+echo "starting_dir --> "${starting_dir}
+curl -k -s -F template=@"~/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml" -X POST http://${GETIP}:8080/nifi-api/process-groups/${ROOT_PG_ID}/templates/upload
+
+echo "nifi template loaded"
+echo
 ###########################################################################################################
 # 
 ###########################################################################################################
