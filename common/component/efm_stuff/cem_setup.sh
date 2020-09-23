@@ -53,7 +53,7 @@ pip install paho-mqtt
 systemctl enable mosquitto
 systemctl start mosquitto
 mv ~/forge-horizons/common/component/efm_stuff/mqtt_stuff/mqtt.* ~
-mv ~/forge-horizons/common/component/spark_stuff/spark.iot* ~
+mv ~/forge-horizons/common/component/efm_stuff/spark_stuff/spark.iot* ~
 
 echo "-- Start EFM and Minifi"
 service efm start
