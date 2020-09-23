@@ -1,0 +1,425 @@
+databases:
+- allow_csv_upload: true
+  allow_ctas: true
+  allow_run_async: true
+  database_name: Impala
+  expose_in_sqllab: true
+  extra: "{\r\n    \"metadata_params\": {},\r\n    \"engine_params\": {},\r\n    \"\
+    metadata_cache_timeout\": {},\r\n    \"schemas_allowed_for_csv_upload\": []\r\n\
+    }\r\n"
+  sqlalchemy_uri: impala://127.0.0.1:21050/default
+  tables:
+  - columns:
+    - avg: true
+      column_name: sensor_10
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_0
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_11
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_1
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_2
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_3
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_4
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_5
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_6
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_7
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_8
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_9
+      sum: true
+      type: DOUBLE
+    - column_name: sensor_state
+      filterable: true
+      groupby: true
+      type: STRING
+    - avg: true
+      column_name: is_healthy
+      sum: true
+      type: INT
+    - avg: true
+      column_name: sensor_id
+      sum: true
+      type: INT
+    - column_name: sensor_ts
+      is_dttm: true
+      type: TIMESTAMP
+    main_dttm_col: sensor_ts
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    - expression: AVG(sensor_10)
+      metric_name: avg__sensor_10
+      metric_type: avg
+    - expression: SUM(sensor_10)
+      metric_name: sum__sensor_10
+      metric_type: sum
+    - expression: AVG(sensor_0)
+      metric_name: avg__sensor_0
+      metric_type: avg
+    - expression: SUM(sensor_0)
+      metric_name: sum__sensor_0
+      metric_type: sum
+    - expression: AVG(sensor_11)
+      metric_name: avg__sensor_11
+      metric_type: avg
+    - expression: SUM(sensor_11)
+      metric_name: sum__sensor_11
+      metric_type: sum
+    - expression: AVG(sensor_1)
+      metric_name: avg__sensor_1
+      metric_type: avg
+    - expression: SUM(sensor_1)
+      metric_name: sum__sensor_1
+      metric_type: sum
+    - expression: AVG(sensor_2)
+      metric_name: avg__sensor_2
+      metric_type: avg
+    - expression: SUM(sensor_2)
+      metric_name: sum__sensor_2
+      metric_type: sum
+    - expression: AVG(sensor_3)
+      metric_name: avg__sensor_3
+      metric_type: avg
+    - expression: SUM(sensor_3)
+      metric_name: sum__sensor_3
+      metric_type: sum
+    - expression: AVG(sensor_4)
+      metric_name: avg__sensor_4
+      metric_type: avg
+    - expression: SUM(sensor_4)
+      metric_name: sum__sensor_4
+      metric_type: sum
+    - expression: AVG(sensor_5)
+      metric_name: avg__sensor_5
+      metric_type: avg
+    - expression: SUM(sensor_5)
+      metric_name: sum__sensor_5
+      metric_type: sum
+    - expression: AVG(sensor_6)
+      metric_name: avg__sensor_6
+      metric_type: avg
+    - expression: SUM(sensor_6)
+      metric_name: sum__sensor_6
+      metric_type: sum
+    - expression: AVG(sensor_7)
+      metric_name: avg__sensor_7
+      metric_type: avg
+    - expression: SUM(sensor_7)
+      metric_name: sum__sensor_7
+      metric_type: sum
+    - expression: AVG(sensor_8)
+      metric_name: avg__sensor_8
+      metric_type: avg
+    - expression: SUM(sensor_8)
+      metric_name: sum__sensor_8
+      metric_type: sum
+    - expression: AVG(sensor_9)
+      metric_name: avg__sensor_9
+      metric_type: avg
+    - expression: SUM(sensor_9)
+      metric_name: sum__sensor_9
+      metric_type: sum
+    - expression: AVG(is_healthy)
+      metric_name: avg__is_healthy
+      metric_type: avg
+    - expression: AVG(sensor_id)
+      metric_name: avg__sensor_id
+      metric_type: avg
+    - expression: SUM(is_healthy)
+      metric_name: sum__is_healthy
+      metric_type: sum
+    - expression: SUM(sensor_id)
+      metric_name: sum__sensor_id
+      metric_type: sum
+    schema: default
+    table_name: nifi_sensor_descriptive
+  - columns:
+    - avg: true
+      column_name: sensor_10
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_0
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_11
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_1
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_2
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_3
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_4
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_5
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_6
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_7
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_8
+      sum: true
+      type: DOUBLE
+    - avg: true
+      column_name: sensor_9
+      sum: true
+      type: DOUBLE
+    - column_name: sensor_state
+      filterable: true
+      groupby: true
+      type: STRING
+    - avg: true
+      column_name: is_healthy
+      sum: true
+      type: INT
+    - avg: true
+      column_name: sensor_id
+      sum: true
+      type: INT
+    - column_name: sensor_ts
+      is_dttm: true
+      type: TIMESTAMP
+    main_dttm_col: sensor_ts
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    - expression: AVG(sensor_10)
+      metric_name: avg__sensor_10
+      metric_type: avg
+    - expression: SUM(sensor_10)
+      metric_name: sum__sensor_10
+      metric_type: sum
+    - expression: AVG(sensor_0)
+      metric_name: avg__sensor_0
+      metric_type: avg
+    - expression: SUM(sensor_0)
+      metric_name: sum__sensor_0
+      metric_type: sum
+    - expression: AVG(sensor_11)
+      metric_name: avg__sensor_11
+      metric_type: avg
+    - expression: SUM(sensor_11)
+      metric_name: sum__sensor_11
+      metric_type: sum
+    - expression: AVG(sensor_1)
+      metric_name: avg__sensor_1
+      metric_type: avg
+    - expression: SUM(sensor_1)
+      metric_name: sum__sensor_1
+      metric_type: sum
+    - expression: AVG(sensor_2)
+      metric_name: avg__sensor_2
+      metric_type: avg
+    - expression: SUM(sensor_2)
+      metric_name: sum__sensor_2
+      metric_type: sum
+    - expression: AVG(sensor_3)
+      metric_name: avg__sensor_3
+      metric_type: avg
+    - expression: SUM(sensor_3)
+      metric_name: sum__sensor_3
+      metric_type: sum
+    - expression: AVG(sensor_4)
+      metric_name: avg__sensor_4
+      metric_type: avg
+    - expression: SUM(sensor_4)
+      metric_name: sum__sensor_4
+      metric_type: sum
+    - expression: AVG(sensor_5)
+      metric_name: avg__sensor_5
+      metric_type: avg
+    - expression: SUM(sensor_5)
+      metric_name: sum__sensor_5
+      metric_type: sum
+    - expression: AVG(sensor_6)
+      metric_name: avg__sensor_6
+      metric_type: avg
+    - expression: SUM(sensor_6)
+      metric_name: sum__sensor_6
+      metric_type: sum
+    - expression: AVG(sensor_7)
+      metric_name: avg__sensor_7
+      metric_type: avg
+    - expression: SUM(sensor_7)
+      metric_name: sum__sensor_7
+      metric_type: sum
+    - expression: AVG(sensor_8)
+      metric_name: avg__sensor_8
+      metric_type: avg
+    - expression: SUM(sensor_8)
+      metric_name: sum__sensor_8
+      metric_type: sum
+    - expression: AVG(sensor_9)
+      metric_name: avg__sensor_9
+      metric_type: avg
+    - expression: SUM(sensor_9)
+      metric_name: sum__sensor_9
+      metric_type: sum
+    - expression: AVG(is_healthy)
+      metric_name: avg__is_healthy
+      metric_type: avg
+    - expression: AVG(sensor_id)
+      metric_name: avg__sensor_id
+      metric_type: avg
+    - expression: SUM(is_healthy)
+      metric_name: sum__is_healthy
+      metric_type: sum
+    - expression: SUM(sensor_id)
+      metric_name: sum__sensor_id
+      metric_type: sum
+    schema: default
+    table_name: sensor_descriptive
+  - columns:
+    - column_name: sensor_ts
+      is_dttm: true
+      type: TIMESTAMP
+    - column_name: is_healthy
+      groupby: true
+      type: INT
+    - column_name: sensor_10
+      type: DOUBLE
+    - column_name: sensor_0
+      type: DOUBLE
+    - column_name: sensor_11
+      type: DOUBLE
+    - column_name: sensor_1
+      type: DOUBLE
+    - column_name: sensor_2
+      type: DOUBLE
+    - column_name: sensor_3
+      type: DOUBLE
+    - column_name: sensor_4
+      type: DOUBLE
+    - column_name: sensor_5
+      type: DOUBLE
+    - column_name: sensor_6
+      type: DOUBLE
+    - column_name: sensor_7
+      type: DOUBLE
+    - column_name: sensor_8
+      type: DOUBLE
+    - column_name: sensor_9
+      type: DOUBLE
+    - column_name: sensor_id
+      type: INT
+    default_endpoint: ''
+    description: SensorDescriptiveSQL
+    filter_select_enabled: true
+    main_dttm_col: sensor_ts
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      verbose_name: COUNT(*)
+    - expression: AVG(sensor_10)
+      metric_name: avg__sensor_10
+    - expression: SUM(sensor_10)
+      metric_name: sum__sensor_10
+    - expression: AVG(sensor_0)
+      metric_name: avg__sensor_0
+    - expression: SUM(sensor_0)
+      metric_name: sum__sensor_0
+    - expression: AVG(sensor_11)
+      metric_name: avg__sensor_11
+    - expression: SUM(sensor_11)
+      metric_name: sum__sensor_11
+    - expression: AVG(sensor_1)
+      metric_name: avg__sensor_1
+    - expression: SUM(sensor_1)
+      metric_name: sum__sensor_1
+    - expression: AVG(sensor_2)
+      metric_name: avg__sensor_2
+    - expression: SUM(sensor_2)
+      metric_name: sum__sensor_2
+    - expression: AVG(sensor_3)
+      metric_name: avg__sensor_3
+    - expression: SUM(sensor_3)
+      metric_name: sum__sensor_3
+    - expression: AVG(sensor_4)
+      metric_name: avg__sensor_4
+    - expression: SUM(sensor_4)
+      metric_name: sum__sensor_4
+    - expression: AVG(sensor_5)
+      metric_name: avg__sensor_5
+    - expression: SUM(sensor_5)
+      metric_name: sum__sensor_5
+    - expression: AVG(sensor_6)
+      metric_name: avg__sensor_6
+    - expression: SUM(sensor_6)
+      metric_name: sum__sensor_6
+    - expression: AVG(sensor_7)
+      metric_name: avg__sensor_7
+    - expression: SUM(sensor_7)
+      metric_name: sum__sensor_7
+    - expression: AVG(sensor_8)
+      metric_name: avg__sensor_8
+    - expression: SUM(sensor_8)
+      metric_name: sum__sensor_8
+    - expression: AVG(sensor_9)
+      metric_name: avg__sensor_9
+    - expression: SUM(sensor_9)
+      metric_name: sum__sensor_9
+    - expression: AVG(is_healthy)
+      metric_name: avg__is_healthy
+    - expression: AVG(sensor_id)
+      metric_name: avg__sensor_id
+    - expression: SUM(is_healthy)
+      metric_name: sum__is_healthy
+    - expression: SUM(sensor_id)
+      metric_name: sum__sensor_id
+    schema: default
+    sql: SELECT sensor_ts, decode(is_healthy, 1, "Good", 0, "Bad") as sensor_state
+      FROM default.sensors
+    table_name: sensors
+    template_params: ''

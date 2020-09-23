@@ -1,0 +1,2435 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "created_on": {
+                    "__datetime__": "2019-08-08T16:18:04"
+                },
+                "id": 6,
+                "position_json": "{\"CHART-YSQ7KL72P5\":{\"children\":[],\"id\":\"CHART-YSQ7KL72P5\",\"meta\":{\"chartId\":78,\"height\":65,\"sliceName\":\"Spark Streaming Dashboard\",\"width\":6},\"type\":\"CHART\"},\"CHART-eInnqIxGJT\":{\"children\":[],\"id\":\"CHART-eInnqIxGJT\",\"meta\":{\"chartId\":79,\"height\":65,\"sliceName\":\"NiFi Streaming Dashboard\",\"width\":6},\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-YuGO01sH3\"],\"id\":\"GRID_ID\",\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Sensor State\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-YuGO01sH3\":{\"children\":[\"CHART-YSQ7KL72P5\",\"CHART-eInnqIxGJT\"],\"id\":\"ROW-YuGO01sH3\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"type\":\"ROW\"}}",
+                "css": "",
+                "slug": null,
+                "created_by_fk": 1,
+                "changed_on": {
+                    "__datetime__": "2019-08-16T12:26:36"
+                },
+                "dashboard_title": "Factory Equipment Status",
+                "description": null,
+                "json_metadata": "{\"filter_immune_slices\": [], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"default_filters\": \"{}\", \"remote_id\": 6}",
+                "changed_by_fk": 1,
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "changed_on": {
+                                "__datetime__": "2019-08-19T17:45:26"
+                            },
+                            "slice_name": "Spark Streaming Dashboard",
+                            "datasource_type": "table",
+                            "viz_type": "bar",
+                            "params": "{\"datasource\": \"13__table\", \"viz_type\": \"bar\", \"slice_id\": 78, \"url_params\": {}, \"granularity_sqla\": \"sensor_ts\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"metrics\": [\"count\"], \"adhoc_filters\": [], \"groupby\": [\"sensor_state\"], \"timeseries_limit_metric\": null, \"order_desc\": true, \"contribution\": false, \"row_limit\": 10000, \"color_scheme\": \"lyftColors\", \"show_brush\": \"auto\", \"show_legend\": true, \"show_bar_value\": true, \"rich_tooltip\": true, \"bar_stacked\": false, \"line_interpolation\": \"linear\", \"show_controls\": false, \"bottom_margin\": \"auto\", \"x_axis_label\": \"Equipment Health\", \"x_ticks_layout\": \"auto\", \"x_axis_format\": \"smart_date\", \"x_axis_showminmax\": false, \"reduce_x_ticks\": false, \"y_axis_label\": \"Total\", \"left_margin\": \"auto\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"y_axis_format\": \".3s\", \"y_axis_bounds\": [null, null], \"rolling_type\": \"None\", \"comparison_type\": \"values\", \"resample_how\": null, \"resample_rule\": null, \"resample_fillmethod\": null, \"annotation_layers\": [], \"remote_id\": 78, \"datasource_name\": \"default.sensor_descriptive\", \"schema\": \"default.sensor_descriptive\", \"database_name\": \"Impala\"}",
+                            "cache_timeout": null,
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:14:19"
+                            },
+                            "id": 78,
+                            "datasource_id": 13,
+                            "datasource_name": "default.sensor_descriptive",
+                            "description": null,
+                            "perm": "[Impala].[sensor_descriptive](id:13)",
+                            "changed_by_fk": 1
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "changed_on": {
+                                "__datetime__": "2019-08-19T17:45:26"
+                            },
+                            "slice_name": "NiFi Streaming Dashboard",
+                            "datasource_type": "table",
+                            "viz_type": "bar",
+                            "params": "{\"datasource\": \"14__table\", \"viz_type\": \"bar\", \"slice_id\": 79, \"url_params\": {}, \"granularity_sqla\": \"sensor_ts\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"metrics\": [\"count\"], \"adhoc_filters\": [], \"groupby\": [\"sensor_state\"], \"timeseries_limit_metric\": null, \"order_desc\": true, \"contribution\": false, \"row_limit\": 10000, \"color_scheme\": \"lyftColors\", \"show_brush\": \"auto\", \"show_legend\": true, \"show_bar_value\": true, \"rich_tooltip\": true, \"bar_stacked\": false, \"line_interpolation\": \"linear\", \"show_controls\": false, \"bottom_margin\": \"auto\", \"x_axis_label\": \"Equipment Health\", \"x_ticks_layout\": \"auto\", \"x_axis_format\": \"smart_date\", \"x_axis_showminmax\": false, \"reduce_x_ticks\": false, \"y_axis_label\": \"Total\", \"left_margin\": \"auto\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"y_axis_format\": \".3s\", \"y_axis_bounds\": [null, null], \"rolling_type\": \"None\", \"comparison_type\": \"values\", \"resample_how\": null, \"resample_rule\": null, \"resample_fillmethod\": null, \"annotation_layers\": [], \"remote_id\": 79, \"datasource_name\": \"default.nifi_sensor_descriptive\", \"schema\": \"default.nifi_sensor_descriptive\", \"database_name\": \"Impala\"}",
+                            "cache_timeout": null,
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-08-11T16:00:23"
+                            },
+                            "id": 79,
+                            "datasource_id": 14,
+                            "datasource_name": "default.nifi_sensor_descriptive",
+                            "description": "",
+                            "perm": "[Impala].[nifi_sensor_descriptive](id:14)",
+                            "changed_by_fk": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "is_featured": false,
+                "main_dttm_col": "sensor_ts",
+                "created_by_fk": 1,
+                "filter_select_enabled": false,
+                "database_id": 2,
+                "changed_by_fk": 1,
+                "offset": 0,
+                "fetch_values_predicate": null,
+                "created_on": {
+                    "__datetime__": "2019-08-08T16:10:26"
+                },
+                "cache_timeout": null,
+                "user_id": null,
+                "changed_on": {
+                    "__datetime__": "2019-08-08T16:10:26"
+                },
+                "params": "{\"remote_id\": 13, \"database_name\": \"Impala\"}",
+                "schema": "default",
+                "id": 13,
+                "perm": "[Impala].[sensor_descriptive](id:13)",
+                "sql": null,
+                "description": null,
+                "table_name": "sensor_descriptive",
+                "is_sqllab_view": false,
+                "default_endpoint": null,
+                "template_params": null,
+                "database": {
+                    "__Database__": {
+                        "password": null,
+                        "allow_ctas": true,
+                        "changed_by_fk": 1,
+                        "cache_timeout": null,
+                        "allow_dml": true,
+                        "created_on": {
+                            "__datetime__": "2019-08-08T13:45:53"
+                        },
+                        "select_as_create_table_as": false,
+                        "force_ctas_schema": "",
+                        "changed_on": {
+                            "__datetime__": "2019-08-19T12:59:45"
+                        },
+                        "expose_in_sqllab": true,
+                        "allow_multi_schema_metadata_fetch": true,
+                        "id": 2,
+                        "allow_run_sync": true,
+                        "extra": "{\r\n    \"metadata_params\": {},\r\n    \"engine_params\": {},\r\n    \"metadata_cache_timeout\": {},\r\n    \"schemas_allowed_for_csv_upload\": []\r\n}\r\n",
+                        "verbose_name": null,
+                        "allow_run_async": true,
+                        "perm": "[Impala].(id:2)",
+                        "database_name": "Impala",
+                        "allow_csv_upload": true,
+                        "impersonate_user": false,
+                        "sqlalchemy_uri": "impala://127.0.0.1:21050/default",
+                        "created_by_fk": 1
+                    }
+                },
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 803,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_id)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_id",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 804,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_id)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_id",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 805,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_0)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_0",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 806,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_0)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_0",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 807,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_1)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_1",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 808,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_1)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_1",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 809,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_2)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_2",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 810,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_2)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_2",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 811,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_3)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_3",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 812,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_3)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_3",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 813,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_4)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_4",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 814,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_4)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_4",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 815,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_5)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_5",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 816,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_5)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_5",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 817,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_6)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_6",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 818,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_6)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_6",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 819,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_7)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_7",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 820,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_7)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_7",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 821,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_8)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_8",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 822,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_8)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_8",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 823,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_9)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_9",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 824,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_9)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_9",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 825,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_10)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_10",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 826,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_10)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_10",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 827,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(sensor_11)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__sensor_11",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 828,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(sensor_11)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__sensor_11",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 829,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "SUM(is_healthy)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "sum__is_healthy",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 830,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "AVG(is_healthy)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "avg__is_healthy",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "id": 831,
+                            "verbose_name": "COUNT(*)",
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 13,
+                            "expression": "COUNT(*)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    }
+                ],
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_id",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "INT",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 444,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_ts",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "TIMESTAMP",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": true,
+                            "id": 445,
+                            "sum": false,
+                            "expression": "",
+                            "avg": false
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_0",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 446,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_1",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 447,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_2",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 448,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_3",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 449,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_4",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 450,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_5",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 451,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_6",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 452,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_7",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 453,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_8",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 454,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_9",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 455,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_10",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 456,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_11",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 457,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "is_healthy",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "INT",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 458,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "column_name": "sensor_state",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": true,
+                            "created_by_fk": 1,
+                            "type": "STRING",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": true,
+                            "table_id": 13,
+                            "changed_on": {
+                                "__datetime__": "2019-08-08T16:10:26"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 459,
+                            "sum": false,
+                            "expression": "",
+                            "avg": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "is_featured": false,
+                "main_dttm_col": "sensor_ts",
+                "created_by_fk": 1,
+                "filter_select_enabled": false,
+                "database_id": 2,
+                "changed_by_fk": 1,
+                "offset": 0,
+                "fetch_values_predicate": null,
+                "created_on": {
+                    "__datetime__": "2019-08-11T15:56:44"
+                },
+                "cache_timeout": null,
+                "user_id": null,
+                "changed_on": {
+                    "__datetime__": "2019-08-11T15:56:44"
+                },
+                "params": "{\"remote_id\": 14, \"database_name\": \"Impala\"}",
+                "schema": "default",
+                "id": 14,
+                "perm": "[Impala].[nifi_sensor_descriptive](id:14)",
+                "sql": null,
+                "description": null,
+                "table_name": "nifi_sensor_descriptive",
+                "is_sqllab_view": false,
+                "default_endpoint": null,
+                "template_params": null,
+                "database": {
+                    "__Database__": {
+                        "password": null,
+                        "allow_ctas": true,
+                        "changed_by_fk": 1,
+                        "cache_timeout": null,
+                        "allow_dml": true,
+                        "created_on": {
+                            "__datetime__": "2019-08-08T13:45:53"
+                        },
+                        "select_as_create_table_as": false,
+                        "force_ctas_schema": "",
+                        "changed_on": {
+                            "__datetime__": "2019-08-19T12:59:45"
+                        },
+                        "expose_in_sqllab": true,
+                        "allow_multi_schema_metadata_fetch": true,
+                        "id": 2,
+                        "allow_run_sync": true,
+                        "extra": "{\r\n    \"metadata_params\": {},\r\n    \"engine_params\": {},\r\n    \"metadata_cache_timeout\": {},\r\n    \"schemas_allowed_for_csv_upload\": []\r\n}\r\n",
+                        "verbose_name": null,
+                        "allow_run_async": true,
+                        "perm": "[Impala].(id:2)",
+                        "database_name": "Impala",
+                        "allow_csv_upload": true,
+                        "impersonate_user": false,
+                        "sqlalchemy_uri": "impala://127.0.0.1:21050/default",
+                        "created_by_fk": 1
+                    }
+                },
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 832,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_id)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_id",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 833,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_id)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_id",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 834,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_0)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_0",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 835,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_0)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_0",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 836,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_1)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_1",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 837,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_1)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_1",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 838,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_2)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_2",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 839,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_2)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_2",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 840,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_3)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_3",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 841,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_3)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_3",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 842,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_4)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_4",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 843,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_4)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_4",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 844,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_5)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_5",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 845,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_5)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_5",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 846,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_6)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_6",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 847,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_6)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_6",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 848,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_7)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_7",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 849,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_7)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_7",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 850,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_8)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_8",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 851,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_8)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_8",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 852,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_9)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_9",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 853,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_9)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_9",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 854,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_10)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_10",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 855,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_10)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_10",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 856,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(sensor_11)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__sensor_11",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 857,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(sensor_11)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__sensor_11",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 858,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "SUM(is_healthy)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "sum__is_healthy",
+                            "metric_type": "sum",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 859,
+                            "verbose_name": null,
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "AVG(is_healthy)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "avg__is_healthy",
+                            "metric_type": "avg",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "id": 860,
+                            "verbose_name": "COUNT(*)",
+                            "description": null,
+                            "d3format": null,
+                            "table_id": 14,
+                            "expression": "COUNT(*)",
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "is_restricted": false,
+                            "warning_text": null,
+                            "created_by_fk": 1
+                        }
+                    }
+                ],
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_id",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "INT",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 460,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_ts",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "TIMESTAMP",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": true,
+                            "id": 461,
+                            "sum": false,
+                            "expression": "",
+                            "avg": false
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_0",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 462,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_1",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 463,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_2",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 464,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_3",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 465,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_4",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 466,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_5",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 467,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_6",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 468,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_7",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 469,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_8",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 470,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_9",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 471,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_10",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 472,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_11",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "DOUBLE",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 473,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "is_healthy",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": false,
+                            "created_by_fk": 1,
+                            "type": "INT",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": false,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 474,
+                            "sum": true,
+                            "expression": "",
+                            "avg": true
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "created_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "column_name": "sensor_state",
+                            "max": false,
+                            "python_date_format": null,
+                            "verbose_name": null,
+                            "min": false,
+                            "database_expression": null,
+                            "is_active": true,
+                            "filterable": true,
+                            "created_by_fk": 1,
+                            "type": "STRING",
+                            "description": null,
+                            "changed_by_fk": 1,
+                            "groupby": true,
+                            "table_id": 14,
+                            "changed_on": {
+                                "__datetime__": "2019-08-11T15:56:44"
+                            },
+                            "count_distinct": false,
+                            "is_dttm": false,
+                            "id": 475,
+                            "sum": false,
+                            "expression": "",
+                            "avg": false
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

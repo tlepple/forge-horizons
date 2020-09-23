@@ -1,0 +1,14 @@
+#superset.service
+###########
+[Unit]
+Description=Superset Visualizaton Platform
+
+[Service]
+Type=simple
+
+
+ExecStart=/etc/init.d/superset
+
+
+[Install]
+WantedBy=default.target
