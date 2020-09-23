@@ -32,7 +32,11 @@ yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel xz-libs xz-devel 
 log "Install python3.4 from source"
 
 # create directory
-mkdir -p /usr/local/downloads
+#mkdir -p /usr/local/downloads
+mkdir -p /opt/app/downloads
+
+# create a softlink to this new dir
+ln -s /usr/local/downloads /opt/app/downloads
 
 # change to dir
 cd /usr/local/downloads
@@ -68,7 +72,11 @@ source ~/.bash_profile
 log "create python virtual environment"
 
 # create directory
-mkdir -p ~/superset-install-oneNode
+#mkdir -p ~/superset-install-oneNode
+mkdir -p /opt/app/superset
+
+# create softlink to this dir
+ln -s ~/superset-install-oneNode /opt/app/superset
 
 # change to dir
 cd ~/superset-install-oneNode
