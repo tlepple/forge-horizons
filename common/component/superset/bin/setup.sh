@@ -36,7 +36,7 @@ log "Install python3.4 from source"
 mkdir -p /opt/app/downloads
 
 # create a softlink to this new dir
-ln -s /usr/local/downloads /opt/app/downloads
+ln -s /opt/app/downloads /usr/local/downloads
 
 # change to dir
 cd /usr/local/downloads
@@ -76,7 +76,7 @@ log "create python virtual environment"
 mkdir -p /opt/app/superset
 
 # create softlink to this dir
-ln -s ~/superset-install-oneNode /opt/app/superset
+ln -s /opt/app/superset ~/superset-install-oneNode 
 
 # change to dir
 cd ~/superset-install-oneNode
