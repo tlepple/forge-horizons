@@ -137,13 +137,15 @@ deactivate
 #########################################################
 
 log "create systemd components for superset"
-cp $dir/../files/superset.service.template ~/superset-install-oneNode/superset.service
+#cp $dir/../files/superset.service.template ~/superset-install-oneNode/superset.service
+cp ~/forge-horizons/common/component/superset/files/superset.service.template ~/superset-install-oneNode/superset.service
 
 # create a softlink to the file
 ln -s ~/superset-install-oneNode/superset.service /etc/systemd/system/superset.service
 
 # copy shell startup script to destination
-cp $dir/../files/start_superset.sh ~/superset-install-oneNode/start_superset.sh
+#cp $dir/../files/start_superset.sh ~/superset-install-oneNode/start_superset.sh
+cp ~/forge-horizons/common/component/superset/files/start_superset.sh ~/superset-install-oneNode/start_superset.sh
 
 # create a softlink to the script
 ln -s ~/superset-install-oneNode/start_superset.sh /etc/init.d/superset
