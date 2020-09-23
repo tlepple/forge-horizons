@@ -389,6 +389,15 @@ sed -i "s#YourCDSW_BLK_DEVICE#$BLOCKDEVICE#g" templates/$TEMPLATE
 python scripts/create_cluster.py templates/$TEMPLATE
 
 ###########################################################################################################
+#  Install EFM and Minifi
+###########################################################################################################
+echo "Installing EFM and Minifi..."
+echo
+. ~/forge-horizons/common/component/efm_stuff/cem_setup.sh
+
+echo
+echo "EFM install complete..."
+###########################################################################################################
 #
 ###########################################################################################################
 
