@@ -443,6 +443,18 @@ curl -k -s -F template=@"/root/forge-horizons/common/component/nifi_templates/cd
 
 echo "nifi template loaded"
 echo
+
+###########################################################################################################
+# install datagen items
+###########################################################################################################
+echo
+echo "setup datagen items..."
+
+. ~/forge-horizons/common/component/datagen/setup_pg_datagen.sh
+
+echo "datagen items installed"
+echo
+
 ###########################################################################################################
 # 
 ###########################################################################################################
