@@ -437,7 +437,7 @@ sed -i "s/HOST_IP/${GETIP}/" ~/forge-horizons/common/component/nifi_templates/cd
 
 # Upload the template
 echo "starting_dir --> "${starting_dir}
-curl -k -s -F template=@"~/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml" -X POST http://${GETIP}:8080/nifi-api/process-groups/${ROOT_PG_ID}/templates/upload
+curl -k -s -F template=@"/root/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml" -X POST http://${GETIP}:8080/nifi-api/process-groups/${ROOT_PG_ID}/templates/upload
 
 echo "nifi template loaded"
 echo
