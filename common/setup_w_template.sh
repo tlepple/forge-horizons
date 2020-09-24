@@ -424,6 +424,9 @@ echo "Kudu tables and views created"
 ###########################################################################################################
 # Load the nifi template via api
 ###########################################################################################################
+echo "unset shell variables..."
+unset -e -x
+
 echo
 echo "load nifi template"
 
