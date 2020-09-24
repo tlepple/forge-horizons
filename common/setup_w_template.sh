@@ -208,6 +208,7 @@ cat <<EOF > $PG_HOME_DIR/data/pg_hba.conf
   host    streamsmsgmgr   streamsmsgmgr  0.0.0.0/0                md5
   host    nifireg         nifireg        0.0.0.0/0                md5
   host    efm             efm            0.0.0.0/0                md5
+  host    datagen         datagen        0.0.0.0/0                md5
 EOF
 
 chown postgres:postgres $PG_HOME_DIR/data/pg_hba.conf
