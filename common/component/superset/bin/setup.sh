@@ -56,6 +56,8 @@ cd Python-3.7.4
 make
 make altinstall
 
+# create softlink for python3 dir
+ln -s /usr/local/bin/python3.7 /usr/local/bin/python3
 
 #########################################################
 # Update PATH and re-initialize
