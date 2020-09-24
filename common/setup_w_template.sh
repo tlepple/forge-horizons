@@ -234,6 +234,7 @@ CREATE ROLE registry LOGIN PASSWORD 'supersecret1';
 CREATE ROLE streamsmsgmgr LOGIN PASSWORD 'supersecret1';
 CREATE ROLE nifireg LOGIN PASSWORD 'supersecret1';
 CREATE ROLE efm LOGIN PASSWORD 'supersecret1';
+CREATE ROLE datagen LOGIN PASSWORD 'supersecret1';
 CREATE DATABASE das OWNER das ENCODING 'UTF-8';
 CREATE DATABASE hive OWNER hive ENCODING 'UTF-8';
 CREATE DATABASE hue OWNER hue ENCODING 'UTF-8';
@@ -247,6 +248,7 @@ CREATE DATABASE registry OWNER registry ENCODING 'UTF-8';
 CREATE DATABASE streamsmsgmgr OWNER streamsmsgmgr ENCODING 'UTF-8';
 CREATE DATABASE nifireg OWNER nifireg ENCODING 'UTF-8';
 CREATE DATABASE efm OWNER efm ENCODING 'UTF-8';
+CREATE DATABASE datagen OWNER datagen ENCODING 'UTF-8';
 EOF
 
 ###########################################################################################################
@@ -437,7 +439,7 @@ sed -i "s/HOST_IP/${GETIP}/" ~/forge-horizons/common/component/nifi_templates/cd
 
 # Upload the template
 echo "starting_dir --> "${starting_dir}
-curl -k -s -F template=@"~/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml" -X POST http://${GETIP}:8080/nifi-api/process-groups/${ROOT_PG_ID}/templates/upload
+curl -k -s -F template=@"/root/forge-horizons/common/component/nifi_templates/cdsw_rest_api.xml" -X POST http://${GETIP}:8080/nifi-api/process-groups/${ROOT_PG_ID}/templates/upload
 
 echo "nifi template loaded"
 echo
