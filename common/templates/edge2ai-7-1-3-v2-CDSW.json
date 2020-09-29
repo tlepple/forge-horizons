@@ -188,6 +188,10 @@
         {
           "refName": "yarn-RESOURCEMANAGER-BASE",
           "roleType": "RESOURCEMANAGER",
+          "configs" : [ {
+        "name" : "yarn_scheduler_maximum_allocation_mb",
+        "value" : "4096"
+      } ],
           "base": true
         },
         {
