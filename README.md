@@ -40,3 +40,10 @@ cd ~/forge-horizons
 
 
 ```
+
+
+#### Example call to build in ProxMox
+
+```
+. setup.sh proxmox edge2ai-7-1-3-v2-CDSW.json /dev/sde
+```
