@@ -8,6 +8,7 @@ The goal of this repo is to automate the install of CDP-DC
 * ssh into a new Centos 7 instance and run the below commands
 
 ```
+sudo -i
 
 #install git
 yum install -y git
