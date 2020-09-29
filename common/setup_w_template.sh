@@ -460,8 +460,13 @@ echo "datagen items installed"
 echo
 
 ###########################################################################################################
-# 
+# Create hdfs directory for admin user and set permissions
 ###########################################################################################################
+echo 
+echo "creating admin user directory in hdfs..."
+hadoop fs -mkdir /user/admin
+hadoop fs -chown admin:hadoop /user/admin
+echo
 
 ###########################################################################################################
 ## Set up AutoTLS
