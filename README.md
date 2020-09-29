@@ -5,7 +5,7 @@ The goal of this repo is to automate the install of CDP-DC
 ### Install Git and pull the repo
 
 
-* ssh into your Centos 7 instance and run the below commands
+* ssh into a new Centos 7 instance and run the below commands
 
 ```
 
