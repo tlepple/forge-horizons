@@ -199,6 +199,10 @@
           "roleType": "NODEMANAGER",
           "configs": [
             {
+              "name" : "yarn_nodemanager_resource_memory_mb",
+              "value" : "4096"
+            },
+            {
               "name": "role_health_suppression_nodemanager_local_data_directories_free_space",
               "value": "true"
             },
