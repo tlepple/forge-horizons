@@ -32,7 +32,7 @@ export AWS_DEFAULT_REGION=<aws region you want to run in>
 
 * pass to this environment `aws` or `proxmox` and the path to the CDSW Block device
 
-#### Example call
+#### Example call to a build in AWS
 
 ```
 cd ~/forge-horizons
