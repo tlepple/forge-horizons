@@ -334,7 +334,7 @@ cd /opt/cloudera/parcel-repo
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/CDSW-1.8.0.p1.4968660-el7.parcel .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/CFM-1.1.0.0-el7.parcel .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/FLINK-1.9.1-csa1.1.0.0-cdh7.0.3.0-79-1753674-el7.parcel .
-/usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/KAFKA-4.1.0-1.4.1.0.p0.4-el7.parcel .
+#/usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/KAFKA-4.1.0-1.4.1.0.p0.4-el7.parcel .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/SCHEMAREGISTRY-0.8.0.2.0.1.0-29-el7.parcel .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/parcel/STREAMS_MESSAGING_MANAGER-2.1.0.2.0.1.0-29-el7.parcel .
 
@@ -344,7 +344,7 @@ cd /opt/cloudera/parcel-repo
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/CDSW-1.8.0.p1.4968660-el7.parcel.sha .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/CFM-1.1.0.0-el7.parcel.sha .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/FLINK-1.9.1-csa1.1.0.0-cdh7.0.3.0-79-1753674-el7.parcel.sha .
-/usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/KAFKA-4.1.0-1.4.1.0.p0.4-el7.parcel.sha .
+#/usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/KAFKA-4.1.0-1.4.1.0.p0.4-el7.parcel.sha .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/SCHEMAREGISTRY-0.8.0.2.0.1.0-29-el7.parcel.sha .
 /usr/local/bin/aws s3 cp s3://zbuild-stuff2/sha/STREAMS_MESSAGING_MANAGER-2.1.0.2.0.1.0-29-el7.parcel.sha .
 
