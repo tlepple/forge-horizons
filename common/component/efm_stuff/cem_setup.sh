@@ -14,7 +14,7 @@ mkdir -p /opt/cloudera/cem
 cd /opt/cloudera/cem
 
 # pull from my s3 bucket
-/usr/local/bin/aws s3 cp s3://zbuild-stuff/other/CEM-1.1.1.0-25-centos7-tars-tarball.tar.gz .
+/usr/local/bin/aws s3 cp s3://zbuild-stuff2/other/CEM-1.1.1.0-25-centos7-tars-tarball.tar.gz .
 tar xzf /opt/cloudera/cem/CEM-1.1.1.0-25-centos7-tars-tarball.tar.gz -C /opt/cloudera/cem
 tar xzf /opt/cloudera/cem/CEM/centos7/1.1.1.0/tars/efm/efm-1.0.0.1.1.1.0-25-bin.tar.gz -C /opt/cloudera/cem
 tar xzf /opt/cloudera/cem/CEM/centos7/1.1.1.0/tars/minifi/minifi-0.6.0.1.1.1.0-25-bin.tar.gz -C /opt/cloudera/cem
