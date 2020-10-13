@@ -75,7 +75,7 @@ create view nifi_sensor_descriptive AS
   ,x.sensor_11
   ,x.is_healthy
   , decode(x.is_healthy, 1, "Good", 0, "Bad") as sensor_state
-FROM default.sensors x);
+FROM default.nifi_sensors x);
 
 --##############################################################################
 --#  Create view
