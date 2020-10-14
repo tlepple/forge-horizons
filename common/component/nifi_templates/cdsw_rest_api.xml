@@ -4093,7 +4093,7 @@ Emulate incoming kafka msgs</label>
                     </entry>
                     <entry>
                         <key>Remote URL</key>
-                        <value>http://cdsw.ec2.internal/api/altus-ds-1/models/call-model </value>
+                        <value>http://modelservice.cdsw.YourCDSWDomain/model -d</value>
                     </entry>
                     <entry>
                         <key>Content-Type</key>
