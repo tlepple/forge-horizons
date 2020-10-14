@@ -293,7 +293,7 @@ npm install forever -g
 echo "-- Enable passwordless root login via rsa key"
 ###########################################################################################################
 ssh-keygen -f ~/myRSAkey -t rsa -N ""
-#mkdir ~/.ssh
+mkdir -p ~/.ssh
 cat ~/myRSAkey.pub >> ~/.ssh/authorized_keys
 chmod 400 ~/.ssh/authorized_keys
 ssh-keyscan -H `hostname` >> ~/.ssh/known_hosts
