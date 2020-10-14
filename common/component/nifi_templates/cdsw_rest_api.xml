@@ -4093,7 +4093,7 @@ Emulate incoming kafka msgs</label>
                     </entry>
                     <entry>
                         <key>Remote URL</key>
-                        <value>http://modelservice.cdsw.YourCDSWDomain/model -d</value>
+                        <value>http://modelservice.cdsw.YourCDSWDomain/model</value>
                     </entry>
                     <entry>
                         <key>Content-Type</key>
