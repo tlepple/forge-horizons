@@ -1,6 +1,9 @@
 ACCESS_KEY=${1}
 PUBLIC_IP=$(curl https://api.ipify.org/)
 
+# added on 10.14.2020
+pip install configparser
+
 sed -i "s/YourHostname/`hostname -f`/" ~/spark.iot.py
 sed -i "s/YourCDSWDomain/cdsw.${PUBLIC_IP}.nip.io/" ~/spark.iot.py
 sed -i "s/YourAccessKey/${ACCESS_KEY}/" ~/spark.iot.py
