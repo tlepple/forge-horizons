@@ -40,7 +40,8 @@ def wait(cmd, timeout=None):
 
 cm_client.configuration.username = 'admin'
 cm_client.configuration.password = 'admin'
-api_client = cm_client.ApiClient("http://localhost:7180/api/v40")
+#api_client = cm_client.ApiClient("http://localhost:7180/api/v40")
+api_client = cm_client.ApiClient("http://localhost:7180/api/v41")
 
 cm_api = cm_client.ClouderaManagerResourceApi(api_client)
 
