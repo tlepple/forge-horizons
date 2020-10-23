@@ -29,6 +29,11 @@ systemctl restart chronyd
 sed -i "s/YourCDSWDomain/$PUBLIC_IP/g" $starting_dir/common/templates/$TEMPLATE
 
 ###########################################################################################################
+# update the nifi template here for model address
+###########################################################################################################
+sed -i "s/YourCDSWDomain/cdsw.${PUBLIC_IP}.nip.io/" $starting_dir/common/component/nifi_templates/cdsw_rest_api.xml
+
+###########################################################################################################
 # install the common items from script 
 ###########################################################################################################
 echo "calling common_setup.sh here..."
