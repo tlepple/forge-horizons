@@ -23,6 +23,10 @@ echo "Parameter BLOCKDEVICE -->" $BLOCKDEVICE
 
 sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
 
+#########################################################
+# update the nifi template here for model address
+#########################################################
+
 
 ###########################################################################################################
 # install the common items from script 
