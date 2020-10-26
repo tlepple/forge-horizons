@@ -33,7 +33,7 @@ sed -i "s/YourCDSWDomain/${PRIVATE_IP}/" $starting_dir/common/component/nifi_tem
 # update the spark streaming code
 #########################################################
 
-#sed -i "s/YourCDSWDomain/cdsw.${PRIVATE_IP}.nip.io/" $starting_dir/common/component/efm_stuff/spark_stuff/spark.iot.py
+sed -i "s/YourCDSWDomain/cdsw.${PRIVATE_IP}.nip.io/" $starting_dir/common/component/efm_stuff/spark_stuff/spark.iot.py
 
 ###########################################################################################################
 # install the common items from script 
