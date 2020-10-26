@@ -39,7 +39,7 @@ sed -i "s/YourCDSWDomain/cdsw.${PUBLIC_IP}.nip.io/" $starting_dir/common/compone
 # update the spark streaming code
 ###########################################################################################################
 
-sed -i "s/YourCDSWDomain/${PRIVATE_IP}/" $starting_dir/common/component/efm_stuff/spark_stuff/spark.iot.py
+sed -i "s/YourCDSWDomain/${PUBLIC_IP}/" $starting_dir/common/component/efm_stuff/spark_stuff/spark.iot.py
 
 
 ###########################################################################################################
