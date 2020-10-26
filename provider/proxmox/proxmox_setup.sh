@@ -17,16 +17,16 @@ echo "Parameter TEMPLATE -->" $TEMPLATE
 echo "Parameter BLOCKDEVICE -->" $BLOCKDEVICE
 #time issues for clock offset in aws	
 
-#########################################################
+###########################################################################################################
 # setup template for proxmox items
-#########################################################
+###########################################################################################################
 
 sed -i "s/YourCDSWDomain/$PRIVATE_IP/g" $starting_dir/common/templates/$TEMPLATE
 
-#########################################################
+###########################################################################################################
 # update the nifi template here for model address
-#########################################################
-sed -i "s/YourCDSWDomain/${PRIVATE_IP}/" $starting_dir/common/component/nifi_templates/cdsw_rest_api.xml
+###########################################################################################################
+sed -i "s/YourCDSWDomain/cdsw.${PRIVATE_IP}.nip.io/" $starting_dir/common/component/nifi_templates/cdsw_rest_api.xml
 
 
 ###########################################################################################################
