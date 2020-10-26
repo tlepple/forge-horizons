@@ -33,6 +33,15 @@ sed -i "s/YourCDSWDomain/$PUBLIC_IP/g" $starting_dir/common/templates/$TEMPLATE
 ###########################################################################################################
 sed -i "s/YourCDSWDomain/cdsw.${PUBLIC_IP}.nip.io/" $starting_dir/common/component/nifi_templates/cdsw_rest_api.xml
 
+
+
+###########################################################################################################
+# update the spark streaming code
+###########################################################################################################
+
+sed -i "s/YourCDSWDomain/${PRIVATE_IP}/" $starting_dir/common/component/efm_stuff/spark_stuff/spark.iot.py
+
+
 ###########################################################################################################
 # install the common items from script 
 ###########################################################################################################
