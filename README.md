@@ -39,7 +39,7 @@ export AWS_DEFAULT_REGION=<aws region you want to run in>
 
 ```
 cd ~/forge-horizons
-. setup.sh aws edge2ai-7-1-3-v2-CDSW.json /dev/xvdc
+. setup.sh aws edge2ai-7-1-4-v1-CDSW.json /dev/xvdc
 
 
 ```
@@ -48,5 +48,5 @@ cd ~/forge-horizons
 #### Example call to build in ProxMox
 
 ```
-. setup.sh proxmox edge2ai-7-1-3-v2-CDSW.json /dev/sde
+. setup.sh proxmox eedge2ai-7-1-4-v1-CDSW.json /dev/sde
 ```
