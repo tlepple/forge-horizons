@@ -1,0 +1,287 @@
+{
+  "cdhVersion": "7.1.4",
+  "displayName": "Cluster1",
+  "cmVersion": "7.1.4",
+  "repositories": [
+    "https://archive.cloudera.com/p/cdh7/{latest_supported}/parcels/",
+    "https://archive.cloudera.com/cdh7/{latest_supported}/parcels/",
+    "https://archive.cloudera.com/p/cdh6/{latest_supported}/parcels/",
+    "https://archive.cloudera.com/cdh6/{latest_supported}/parcels/",
+    "https://archive.cloudera.com/p/cdh5/parcels/latest",
+    "https://archive.cloudera.com/cdh5/parcels/5.16/",
+    "https://parcels.repos.intel.com/mkl/latest",
+    "https://archive.cloudera.com/accumulo-c5/parcels/latest/",
+    "https://archive.cloudera.com/accumulo6/6.1/parcels/",
+    "https://archive.cloudera.com/kafka/parcels/latest/",
+    "http://archive.cloudera.com/kudu/parcels/latest/",
+    "https://archive.cloudera.com/sqoop-teradata-connector1/latest/parcels/",
+    "https://archive.cloudera.com/sqoop-netezza-connector1/latest/",
+    "https://archive.cloudera.com/sqoop-connectors/parcels/latest/"
+  ],
+  "products": [
+    {
+      "version": "0.8.0.2.0.1.0-29",
+      "product": "SCHEMAREGISTRY"
+    },
+    {
+      "version": "7.1.4-1.cdh7.1.4.p0.6300266",
+      "product": "CDH"
+    },
+    {
+      "version": "1.1.0.0",
+      "product": "CFM"
+    }
+  ],
+  "services": [
+    {
+      "refName": "nifiregistry",
+      "serviceType": "NIFIREGISTRY",
+      "serviceConfigs": [
+        {
+          "name": "nifi.registry.security.truststorePasswd",
+          "variable": "nifiregistry-nifi.registry.security.truststorePasswd"
+        },
+        {
+          "name": "nifitoolkitca_service",
+          "ref": "nifitoolkitca"
+        },
+        {
+          "name": "nifi.registry.master.key.password",
+          "variable": "nifiregistry-nifi.registry.master.key.password"
+        },
+        {
+          "name": "nifi.registry.security.keyPasswd",
+          "variable": "nifiregistry-nifi.registry.security.keyPasswd"
+        },
+        {
+          "name": "nifi.registry.security.keystorePasswd",
+          "variable": "nifiregistry-nifi.registry.security.keystorePasswd"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifiregistry-NIFI_REGISTRY_SERVER-BASE",
+          "roleType": "NIFI_REGISTRY_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "nifi",
+      "serviceType": "NIFI",
+      "serviceConfigs": [
+        {
+          "name": "nifi.master.key.password",
+          "variable": "nifi-nifi.master.key.password"
+        },
+        {
+          "name": "zookeeper_service",
+          "ref": "zookeeper"
+        },
+        {
+          "name": "nifi.security.keyPasswd",
+          "variable": "nifi-nifi.security.keyPasswd"
+        },
+        {
+          "name": "nifitoolkitca_service",
+          "ref": "nifitoolkitca"
+        },
+        {
+          "name": "nifi.sensitive.props.key",
+          "variable": "nifi-nifi.sensitive.props.key"
+        },
+        {
+          "name": "nifi.security.keystorePasswd",
+          "variable": "nifi-nifi.security.keystorePasswd"
+        },
+        {
+          "name": "nifi.security.truststorePasswd",
+          "variable": "nifi-nifi.security.truststorePasswd"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifi-NIFI_NODE-BASE",
+          "roleType": "NIFI_NODE",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "nifitoolkitca",
+      "serviceType": "NIFITOOLKITCA",
+      "serviceConfigs": [
+        {
+          "name": "nifi.toolkit.keystore.keyPassword",
+          "variable": "nifitoolkitca-nifi.toolkit.keystore.keyPassword"
+        },
+        {
+          "name": "nifi.toolkit.tls.ca.server.token",
+          "variable": "nifitoolkitca-nifi.toolkit.tls.ca.server.token"
+        },
+        {
+          "name": "nifi.toolkit.keystore.password",
+          "variable": "nifitoolkitca-nifi.toolkit.keystore.password"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "nifitoolkitca-NIFI_TOOLKIT_SERVER-BASE",
+          "roleType": "NIFI_TOOLKIT_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "schemaregistry",
+      "serviceType": "SCHEMAREGISTRY",
+      "serviceConfigs": [
+        {
+          "name": "database_type",
+          "variable": "schemaregistry-database_type"
+        },
+        {
+          "name": "database_port",
+          "variable": "schemaregistry-database_port"
+        },
+        {
+          "name": "database_host",
+          "variable": "schemaregistry-database_host"
+        },
+        {
+          "name": "database_name",
+          "variable": "schemaregistry-database_name"
+        },
+        {
+          "name": "database_password",
+          "variable": "schemaregistry-database_password"
+        },
+        {
+          "name": "database_user",
+          "variable": "schemaregistry-database_user"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "schemaregistry-SCHEMA_REGISTRY_SERVER-BASE",
+          "roleType": "SCHEMA_REGISTRY_SERVER",
+          "base": true
+        }
+      ]
+    },
+    {
+      "refName": "zookeeper",
+      "serviceType": "ZOOKEEPER",
+      "serviceConfigs": [
+        {
+          "name": "service_config_suppression_server_count_validator",
+          "value": "true"
+        }
+      ],
+      "roleConfigGroups": [
+        {
+          "refName": "zookeeper-SERVER-BASE",
+          "roleType": "SERVER",
+          "base": true
+        }
+      ]
+    }
+  ],
+  "hostTemplates": [
+    {
+      "refName": "MasterTemplate",
+      "cardinality": 1,
+      "roleConfigGroupsRefNames": [
+        "nifi-NIFI_NODE-BASE",
+        "nifiregistry-NIFI_REGISTRY_SERVER-BASE",
+        "nifitoolkitca-NIFI_TOOLKIT_SERVER-BASE",
+        "schemaregistry-SCHEMA_REGISTRY_SERVER-BASE",
+        "zookeeper-SERVER-BASE"
+      ]
+    }
+  ],
+  "instantiator": {
+    "clusterName": "Cluster1",
+    "hosts": [
+      {
+        "hostName": "YourHostname",
+        "hostTemplateRefName": "MasterTemplate"
+      }
+    ],
+    "variables": [
+      {
+        "name": "nifi-nifi.master.key.password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.keyPasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.keystorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.security.truststorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifi-nifi.sensitive.props.key",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.master.key.password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.keyPasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.keystorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifiregistry-nifi.registry.security.truststorePasswd",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifitoolkitca-nifi.toolkit.keystore.keyPassword",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifitoolkitca-nifi.toolkit.keystore.password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "nifitoolkitca-nifi.toolkit.tls.ca.server.token",
+        "value": "Nifirockstheboat"
+      },
+      {
+        "name": "schemaregistry-database_host",
+        "value": "YourHostname"
+      },
+      {
+        "name": "schemaregistry-database_name",
+        "value": "registry"
+      },
+      {
+        "name": "schemaregistry-database_password",
+        "value": "supersecret1"
+      },
+      {
+        "name": "schemaregistry-database_port",
+        "value": "5432"
+      },
+      {
+        "name": "schemaregistry-database_type",
+        "value": "postgresql"
+      },
+      {
+        "name": "schemaregistry-database_user",
+        "value": "registry"
+      }
+    ],
+    "lenient": false
+  }
+}
