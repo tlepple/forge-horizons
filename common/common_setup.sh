@@ -28,3 +28,5 @@ cd common
 
 . setup_w_template.sh $TEMPLATE $BLOCKDEVICE
 
+#. setup_cm_only.sh $TEMPLATE $BLOCKDEVICE
+
