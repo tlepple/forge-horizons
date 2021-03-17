@@ -519,7 +519,7 @@
       },
       {
         "name": "hue-database_host",
-        "value": "supersecret1"
+        "value": "YourHostname"
       },
       {
         "name": "hue-database_password",
