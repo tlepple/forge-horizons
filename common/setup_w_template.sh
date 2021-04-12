@@ -36,22 +36,22 @@ BLOCKDEVICE=$2
 ###########################################################################################################
 # No Paywall 
 ###########################################################################################################
-#CLDR_MGR_BASEURL="https://archive.cloudera.com/cm7"
-#CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.0.3/redhat7/yum"
-#CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.1.4/redhat7/yum"
+CLDR_MGR_BASEURL="https://archive.cloudera.com/cm7"
+CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.0.3/redhat7/yum"
+CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.1.4/redhat7/yum"
 
-#wget $CLDR_MGR_VER_URL/cloudera-manager-trial.repo -P /etc/yum.repos.d/
+wget $CLDR_MGR_VER_URL/cloudera-manager-trial.repo -P /etc/yum.repos.d/
 
 
 ###########################################################################################################
 # Paywall
 ###########################################################################################################
-CLDR_CM_LOCATION="@archive.cloudera.com/p/cm7"
-CLDR_MGR_BASEURL="https://$CLDR_REPO_USER:$CLDR_REPO_PASS$CLDR_CM_LOCATION"
-CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.1.4/redhat7/yum"
+#CLDR_CM_LOCATION="@archive.cloudera.com/p/cm7"
+#CLDR_MGR_BASEURL="https://$CLDR_REPO_USER:$CLDR_REPO_PASS$CLDR_CM_LOCATION"
+#CLDR_MGR_VER_URL="$CLDR_MGR_BASEURL/7.1.4/redhat7/yum"
 
 #wget $CLDR_MGR_VER_URL/cloudera-manager.repo -P /etc/yum.repos.d/
-wget $CLDR_MGR_VER_URL/cloudera-manager-trial.repo -P /etc/yum.repos.d/
+#wget $CLDR_MGR_VER_URL/cloudera-manager-trial.repo -P /etc/yum.repos.d/
 
 ###########################################################################################################
 # End Paywall Section
@@ -80,9 +80,9 @@ LOCAL_TIMEZONE="America/Chicago"
 #  Configure OS pre-reqs 4 CM
 ###########################################################################################################
 
-if [ getenforce != Disabled ]
-then  setenforce 0;
-fi
+#if [ getenforce != Disabled ]
+#then  setenforce 0;
+#fi
 
 ln -sf /usr/share/zoneinfo/$LOCAL_TIMEZONE /etc/localtime
 
@@ -123,7 +123,7 @@ sed -i "s/HOSTNAME=.*/HOSTNAME=`hostname`/" /etc/sysconfig/network
 #echo "set enforce step"
 #setenforce 0
 echo "update selinux"
-sed -i 's/SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
+#sed -i 's/SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
 
 
 ###########################################################################################################
