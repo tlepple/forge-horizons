@@ -29,6 +29,9 @@ yum install -y wget
 yum install -y epel-release
 yum install -y python-pip
 
+# upgrade pip version
+pip install --upgrade pip==19.3.1
+
 DB_PASSWORD="supersecret1"
 TEMPLATE=$1
 BLOCKDEVICE=$2
