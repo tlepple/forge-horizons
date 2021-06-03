@@ -50,3 +50,18 @@ cd ~/forge-horizons
 ```
 . setup.sh proxmox eedge2ai-7-1-4-v1-CDSW.json /dev/sde
 ```
+
+
+---
+### Start / Stop services running in Cloudera Manager with these commands:
+
+```
+# Start all services:
+cd ~/forge-horizons
+. bin/start_cluster.sh
+
+# Stop all services:
+cd ~/forge-horizons
+. bin/stop_cluster.sh
+
+```
