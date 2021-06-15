@@ -5,6 +5,13 @@
 #########################################################
 
 #########################################################
+# set the CM username & pwd
+#########################################################
+
+CM_USER=admin
+CM_PWD=admin
+
+#########################################################
 # check cdsw status
 #########################################################
 
@@ -39,8 +46,7 @@ check_role_state(){
   get_cluster_name
   counter=0
   while [ $counter -lt 300 ]; do
-    CDSW_ROLE_STATE=`curl -u "admin:admin" -k -s GET http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/cdsw/roles | jq -r '.items[0].roleState'`
-
+    CDSW_ROLE_STATE=`curl -u "$CM_USER:$CM_PWD" -k -s GET http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/cdsw/roles | jq -r '.items[0].roleState'`
     if [ "$CDSW_ROLE_STATE" != 'STOPPED' ]; then
        echo "CDSW Status --> "$CDSW_ROLE_STATE
        echo "sleeping for 20s"
@@ -68,7 +74,7 @@ start_cm_service() {
 
     if [ ${CM_STATUS} == 'STOPPED' ]; then
         echo "Starting CM Service"
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/cm/service/commands/start"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/cm/service/commands/start"
     fi
 
     # check for 5 min if status is started
@@ -102,7 +108,7 @@ stop_cm_service() {
 
     if [ ${CM_STATUS} == 'STARTED' ]; then
         echo "Stopping CM Service"
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/cm/service/commands/stop"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/cm/service/commands/stop"
     fi
 
     # check for 5 min if status is started
@@ -136,7 +142,7 @@ start_cluster_services() {
 
     if [ ${CLUSTER_ENTITY_STATUS} == 'STOPPED' ]; then
         echo "Starting Cluster Services..."
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/commands/start"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/commands/start"
     fi
 
   return
@@ -152,7 +158,7 @@ stop_cluster_services() {
     get_cluster_entity_status
     if [[ ${CLUSTER_ENTITY_STATUS} == 'GOOD_HEALTH' ]]; then
         echo "Stopping Cluster Services..."
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/commands/stop"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/commands/stop"
     fi
 
     return
@@ -164,7 +170,7 @@ stop_cluster_services() {
 #########################################################
 
 get_cm_status () {
-    CM_STATUS=`curl -X  GET -u "admin:admin" -k -s "http://${CM_HOST}:7180/api/v40/cm/service" | jq -r '.serviceState'`
+    CM_STATUS=`curl -X  GET -u "$CM_USER:$CM_PWD" -k -s "http://${CM_HOST}:7180/api/v40/cm/service" | jq -r '.serviceState'`
 }
 
 #########################################################
@@ -172,7 +178,7 @@ get_cm_status () {
 #########################################################
 
 get_cluster_name () {
-    CLUSTER_NAME=`curl -X  GET -u "admin:admin" -k -s "http://${CM_HOST}:7180/api/v40/clusters" | jq -r '.items[].name'`
+    CLUSTER_NAME=`curl -X  GET -u "$CM_USER:$CM_PWD" -k -s "http://${CM_HOST}:7180/api/v40/clusters" | jq -r '.items[].name'`
 }
 
 #########################################################
@@ -182,7 +188,7 @@ get_cluster_name () {
 get_service_state(){
     get_cluster_name
     
-    CURRENT_SERVICE_STATE=`curl -u "admin:admin" -k -s GET http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1 | jq -r '.serviceState'`
+    CURRENT_SERVICE_STATE=`curl -u "$CM_USER:$CM_PWD" -k -s GET http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1 | jq -r '.serviceState'`
 }
 
 #########################################################
@@ -192,7 +198,7 @@ get_service_state(){
 get_installed_services() {
     get_cluster_name
     
-    INSTALLED_SERVICES=`curl -X GET -u "admin:admin" -k -s "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services" | jq -r '.items[].name'`
+    INSTALLED_SERVICES=`curl -X GET -u "$CM_USER:$CM_PWD" -k -s "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services" | jq -r '.items[].name'`
 }
 
 #########################################################
@@ -202,7 +208,7 @@ get_installed_services() {
 get_cluster_entity_status() {
     get_cluster_name
     
-    CLUSTER_ENTITY_STATUS=`curl -X GET -u "admin:admin" -k -s "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}" | jq -r '.entityStatus'`
+    CLUSTER_ENTITY_STATUS=`curl -X GET -u "$CM_USER:$CM_PWD" -k -s "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}" | jq -r '.entityStatus'`
 }
 
 #########################################################
@@ -309,7 +315,7 @@ start_service() {
     
     if [ ${CURRENT_SERVICE_STATE} == 'STOPPED' ]; then
         echo "Starting $1 Service..."
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/start"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/start"
     fi
 
     return
@@ -324,7 +330,7 @@ stop_service() {
     
     if [ ${CURRENT_SERVICE_STATE} == 'STARTED' ]; then
         echo "Stopping $1 Service..."
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/stop"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/stop"
     fi
 
     return
@@ -340,7 +346,7 @@ restart_service() {
    
     if [ ${CURRENT_SERVICE_STATE} == 'STARTED' ]; then
         echo "Restarting $1 Service..."
-        curl -X POST -u "admin:admin" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/restart"
+        curl -X POST -u "$CM_USER:$CM_PWD" "http://${CM_HOST}:7180/api/v40/clusters/${CLUSTER_NAME}/services/$1/commands/restart"
     fi
 
     return
